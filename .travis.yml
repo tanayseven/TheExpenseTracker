@@ -15,6 +15,7 @@ env:
     - API=25 # Android API level 25 by default
     - TAG=google_apis # Google APIs by default, alternatively use default
     - ABI=armeabi-v7a # ARM ABI v7a by default
+    - ADB_INSTALL_TIMEOUT=8
 
 before_install:
   - export EMULATOR="system-images;android-${API};${TAG};${ABI}"
