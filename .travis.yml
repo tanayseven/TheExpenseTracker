@@ -18,6 +18,7 @@ env:
     - ADB_INSTALL_TIMEOUT=8
 
 before_install:
+  - chmod +x gradlew
   - export EMULATOR="system-images;android-${API};${TAG};${ABI}"
 
 install:
