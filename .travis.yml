@@ -1,6 +1,6 @@
 language: android
 jdk: oraclejdk8
-sudo: required
+sudo: false
 android:
   components:
      - tools
@@ -33,4 +33,5 @@ before-script:
 
 script:
   - ./gradlew build
+  - ./gradlew build connectedCheck
   - ./gradlew test
