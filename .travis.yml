@@ -29,6 +29,7 @@ install:
   - echo yes | sdkmanager "$EMULATOR"
 
 before_script:
+  - function emulator { cd "$(dirname "$(which emulator)")" && ./emulator "$@"; }
   - echo no | android create avd --force -n test -k $EMULATOR
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
