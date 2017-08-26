@@ -28,7 +28,7 @@ install:
   - echo yes | sdkmanager "platforms;android-24"
   - echo yes | sdkmanager "$EMULATOR"
 
-before-script:
+before_script:
   - echo no | android create avd --force -n test -k $EMULATOR
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
