@@ -8,7 +8,7 @@ android:
      - build-tools-26.0.0
      - android-25
      - tools
-     - sys-img-armeabi-v7a-android-25
+     - sys-img-armeabi-v7a-google_apis-25
 
 env:
   global:
@@ -19,16 +19,15 @@ env:
 
 before_install:
   - export EMULATOR="system-images;android-${API};${TAG};${ABI}"
-  - export DEVICE="Nexus_5X"
 
 install:
   - echo yes | sdkmanager "tools"
-  - echo yes | sdkmanager "platforms;android-25"
+  - echo yes | sdkmanager "platforms;android-24"
   - echo yes | sdkmanager "$EMULATOR"
 
 before-script:
   - echo no | android create avd --force -n test -k $EMULATOR
-  - emulator -avd test -no-audio -no-window &
+  - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
 
