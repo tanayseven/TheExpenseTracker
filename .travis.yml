@@ -6,18 +6,17 @@ android:
      - tools
      - platform-tools
      - build-tools-26.0.0
-     - android-24
      - android-25
      - tools
-     - sys-img-armeabi-v7a-google_apis-24
+     - sys-img-x86_64-google_apis-25
   licenses:
    - 'android-sdk-license-.+'   
 
 env:
   global:
-    - API=24 # Android API level 24 by default
+    - API=25 # Android API level 24 by default
     - TAG=google_apis # Google APIs by default, alternatively use default
-    - ABI=armeabi-v7a # ARM ABI v7a by default
+    - ABI=x86_64 # ARM ABI v7a by default
     - ADB_INSTALL_TIMEOUT=8
 
 before_install:
@@ -25,7 +24,7 @@ before_install:
 
 install:
   - echo yes | sdkmanager "tools"
-  - echo yes | sdkmanager "platforms;android-24"
+  - echo yes | sdkmanager "platforms;android-25"
   - echo yes | sdkmanager "$EMULATOR"
 
 before_script:
