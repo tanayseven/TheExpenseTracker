@@ -24,7 +24,7 @@ before_install:
 
 install:
   - echo yes | sdkmanager "tools"
-  - echo yes | sdkmanager "platforms;android-24"
+  - echo yes | sdkmanager "platforms;android-25"
   - echo yes | sdkmanager "$EMULATOR"
 
 before-script:
